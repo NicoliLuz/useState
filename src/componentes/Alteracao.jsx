@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
-function Contador () {
-    const [contador, setContador] = useState(0);
+function AlternarTexto() {
+  const [texto, setTexto] = useState('Texto 1');
 
-    const incrementar = () => {
-        setContador (contador + 1);
-    };
+  const alternarTexto = () => {
+    setTexto((prevTexto) => (prevTexto === 'Texto 1' ? 'Texto 2' : 'Texto 1'));
+  };
 
-    return (
-        <div>
-            <p>Contador: {contador}</p>
-            <button onClick={incrementar}>Incrementar</button>
-        </div>
-    );
-}
+  return (
+    <div>
+      <p>{texto}</p>
+      <button onClick={alternarTexto}>Alternar Texto</button>
+    </div>
+  );
+};
 
-export default Contador;
+export default AlternarTexto;
